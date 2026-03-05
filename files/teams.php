@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
 </head>
-<body>
+<body class="TEAMS">
     <h1>Teams</h1>
     <p>hier kunnen de teams worden aangemaakt plus jullie teamnaam zelf kiezen.</p>
 
