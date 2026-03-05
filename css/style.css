@@ -59,3 +59,15 @@ button {
   padding: 5px 10px;
   cursor: pointer;
 }
+
+.INDEX1 {
+  background-color: #ce1313;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  color: rgb(28, 190, 163);
+}
