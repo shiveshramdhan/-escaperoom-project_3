@@ -6,15 +6,20 @@ CREATE TABLE riddles (
     roomId INT NOT NULL
 );
 
--- Let op, dit is een voorbeeld!
+-- Eigen raadsels voor escape room kamers
 INSERT INTO riddles (riddle, answer, hint, roomId)
 VALUES
-    ('Welke Pokémon is nummer 25 in de Pokédex?', 'Pikachu', 'Het is de mascotte van Pokémon.', 1),
-    ('Wat is het type van Charmander?', 'Vuur', 'Denk aan zijn vlammende staart.', 1),
-    ('Hoe heet de evolutie van Bulbasaur?', 'Ivysaur', 'Het zit tussen Bulbasaur en Venusaur.', 1),
-    ('Wat gebeurt er als Magikarp level 20 bereikt?', 'Gyarados', 'Van nutteloos naar legendarisch!', 2),
-    ('Wat is super effectief tegen een water-type Pokémon?', 'Gras', 'Denk aan elementaire logica: wat groeit in water?', 2),
-    ('Welke legendarische vogel hoort bij het element ijs?', 'Articuno', 'Zijn naam begint met "Arti...".', 2),
-    ('Wat is de naam van de professor in de eerste Pokémon-games?', 'Professor Oak', 'Hij deelt je eerste Pokémon uit.', 3),
-    ('Welke kleur heeft shiny Charizard?', 'Zwart', 'Anders dan zijn originele oranje kleur.', 3),
-    ('Wat gebruik je om een wilde Pokémon te vangen?', 'Pokéball', 'Je gooit het naar een Pokémon.', 3);
+    -- Kamer 1
+    ('Ik heb handen maar kan niet kloppen. Wat ben ik?', 'Klok', 'Kijk naar je pols of aan de muur.', 1),
+    ('Hoe meer je neemt, hoe meer je achterlaat. Wat ben ik?', 'Voetafdrukken', 'Je maakt dit in het zand of op de vloer.', 1),
+    ('Wat heeft een hoofd en een staart, maar geen lichaam?', 'Munt', 'Je gooit dit voor kop of munt.', 1),
+    
+    -- Kamer 2
+    ('Ik ben licht als een veer, maar de sterkste man ter wereld kan me niet vasthouden. Wat ben ik?', 'Adem', 'Je hebt dit nodig om te leven.', 2),
+    ('Wat kun je zien, maar niet aanraken, en kan niet vast zitten?', 'Schaduw', 'Volgt je op doffe dagen en zonnige dagen.', 2),
+    ('Ik heb een gezicht en twee handen, maar geen armen of benen. Wat ben ik?', 'Horloge', 'Wijst de tijd aan.', 2),
+    
+    -- Kamer 3
+    ('Je kunt het vangen, maar niet gooien. Wat ben ik?', 'Kou', 'Je voelt dit in de winter.', 3),
+    ('Wat wordt natter naarmate het droogt?', 'Handdoek', 'Je gebruikt dit na het douchen.', 3),
+    ('Ik ben nooit nass, maar bij regen ben ik het eerste wat nat wordt. Wat ben ik?', 'Regenjas', 'Protection tegen water.', 3);
