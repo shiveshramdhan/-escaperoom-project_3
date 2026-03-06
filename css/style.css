@@ -32,6 +32,15 @@ a {
   background-color: #2980b9;
 }
 
+.box.solved {
+  background-color: #2ecc71;
+  cursor: default;
+}
+
+.box.solved:hover {
+  background-color: #27ae60;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -58,4 +67,65 @@ button {
   margin-top: 10px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+
+/* win/lose screen styles */
+.win-lose-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f5f5f5;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 300px;
+}
+
+.win-lose-container .numbers {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.win-lose-container .numbers span {
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.win-lose-container .result {
+  font-size: 2.5rem;
+  margin: 20px 0 10px;
+}
+
+.win-lose-container .result.win {
+  color: green;
+}
+
+.win-lose-container .result.lose {
+  color: red;
+}
+
+.win-lose-container .time {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* indexphp css en teamsphp css */
+.INDEX1 {
+  background-color: #35023f;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+}
+.TEAMS {
+  background-color: #35023f;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
 }
