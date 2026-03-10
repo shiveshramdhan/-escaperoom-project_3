@@ -15,6 +15,8 @@
         <a href="teams.php">
   <button>Ga naar teams aanmaken</button>
 </a>
+<img class="image1" src="../img/download.jpg" alt="halve schedel guy">
+<img class="image2" src="../img/scream-4_7ae7aba6.avif" alt="scream4">
 </div>
 
 </body>
