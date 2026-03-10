@@ -112,15 +112,8 @@ button {
   margin-bottom: 15px;
 }
 
-/* indexphp css en teamsphp css */
-.INDEX1 {
-  background-color: #35023f;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  margin: auto;
-}
+/* teamsphp css */
+
 .TEAMS {
   background-color: #35023f;
   color: white;
@@ -129,3 +122,90 @@ button {
   width: 80%;
   margin: auto;
 }
+
+/* achtergrond */
+
+body{
+margin:0;
+font-family: Arial, sans-serif;
+}
+
+/* paarse horror achtergrond */
+
+.INDEX1{
+background: radial-gradient(circle at top,#4b006e,#1a001f);
+color:white;
+min-height:100vh;
+}
+
+/* layout */
+
+.home-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+padding:80px 40px;
+gap:50px;
+}
+
+/* tekst */
+
+.text-section{
+width:50%;
+}
+
+.text-section h1{
+font-family:'Creepster', cursive;
+font-size:48px;
+letter-spacing:2px;
+margin-bottom:30px;
+text-shadow:0 0 15px black;
+}
+
+.text-section p{
+line-height:1.7;
+margin-bottom:15px;
+}
+
+/* evil text */
+
+.evil-text{
+color:#ff4d4d;
+font-weight:bold;
+text-shadow:0 0 10px red;
+}
+
+/* afbeelding */
+
+.image-section{
+width:45%;
+}
+
+.image-section img{
+width:100%;
+border-radius:6px;
+box-shadow:0 0 40px black;
+}
+
+/* knop */
+
+.start-btn{
+margin-top:30px;
+padding:16px 50px;
+font-size:18px;
+background:#444;
+color:white;
+border:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.start-btn:hover{
+background:#666;
+transform:scale(1.05);
+box-shadow:0 0 10px white;
+}
+
+

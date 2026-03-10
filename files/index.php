@@ -1,22 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EscapeRoom</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/app.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Haunted Villa</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- horror font -->
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
 </head>
+
 <body class="INDEX1">
-    <div>
-        <h1>Escape Room</h1>
-        <p>Welcome to the Escape Room! Maak puzzels en vind clues om te ontsnappen. <br>
-        Niet te hard schrikken he HAHAHAHAHAHAHAHAHAHAHA </p>
-        <a href="teams.php">
-  <button>Ga naar teams aanmaken</button>
+
+<div class="home-container">
+
+<div class="text-section">
+
+<h1>welkom bij haunted villa</h1>
+
+<p>
+onze escape room gaat over dat je moet ontsnappen van de villa zonder <br>
+dood te gaan of te stoppen met het spel. Tussendoor krijg je ook van <br>
+die schrikmomenten zonder dat je weet wat er gaat gebeuren dus wees <br>
+daarop voorbereid.
+</p>
+
+<p>
+hou rekening met de leeftijd. <br>
+deze escape room is voor 16 jaar en ouder. <br>
+
+</p>
+
+<p>Veel plezier en niet te veel schrikken he...</p> <br>
+
+<p class="evil-text">HAHAHAHAHAHAHAHAHAHAHAHA!!!!!!!!!!!!</p> <br>
+
+<a href="teams.php">
+<button class="start-btn">teams aanmaken</button> <br>
 </a>
-<img class="image1" src="../img/download.jpg" alt="halve schedel guy">
-<img class="image2" src="../img/scream-4_7ae7aba6.avif" alt="scream4">
+
+</div>
+
+<div class="image-section">
+
+<img src="../img/download.jpg" alt="haunted house">
+
+</div>
+
 </div>
 
 </body>
