@@ -75,3 +75,52 @@ function checkAnswer() {
     feedback.style.color = 'red';
   }
 }
+
+console.log("JS werkt!"); // Even checken of script geladen is
+
+// Haal bestaande data op of maak lege array
+let teams = JSON.parse(localStorage.getItem("teams")) || [];
+
+// Toon tabel bij laden
+document.addEventListener("DOMContentLoaded", function() {
+    displayTeams();
+});
+
+function addTeam() {
+
+  console.log("addTeam"); // Even checken of script geladen is
+
+    let name = document.getElementById("name").value.trim();
+    let team = document.getElementById("team").value.trim();
+
+    if (name === "" || team === "") {
+        alert("Vul beide velden in!");
+        return;
+    }
+
+    // Voeg toe aan array
+    teams.push({ name: name, team: team });
+
+    // Opslaan in localStorage
+    localStorage.setItem("teams", JSON.stringify(teams));
+
+    // Leeg maken input
+    document.getElementById("name").value = "";
+    document.getElementById("team").value = "";
+
+    // Update tabel
+    displayTeams();
+}
+
+function displayTeams() {
+    let tableBody = document.getElementById("tableBody");
+    tableBody.innerHTML = "";
+
+    teams.forEach((item, index) => {
+        let row = `<tr>
+            <td>${item.name}</td>
+            <td>${item.team}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+    });
+}
