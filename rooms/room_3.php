@@ -19,7 +19,8 @@ try {
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="room3">
+  <img src="Room3background.avif" alt="Room3background" class="background-image">
 
   <div class="container">
     <?php foreach ($riddles as $index => $riddle) : ?>
@@ -42,7 +43,7 @@ try {
   </section>
 
   <script src="../js/app.js"></script>
-
+ 
 </body>
 
 </html>
