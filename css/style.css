@@ -1,15 +1,6 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  min-height: 100vh;
-  margin: 0;
-  background-image: url('../img/scream-4_7ae7aba6.avif');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white;
-  background-color: #050405;
 }
 
 a {
