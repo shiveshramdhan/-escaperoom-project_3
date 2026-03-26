@@ -76,6 +76,7 @@ function checkAnswer() {
   }
 }
 
+localStorage.clear();
 console.log("JS werkt!"); // Even checken of script geladen is
 
 // Haal bestaande data op of maak lege array

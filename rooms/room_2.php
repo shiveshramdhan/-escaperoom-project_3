@@ -19,7 +19,7 @@ try {
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="room_2">
 
   <div class="container">
     <?php foreach ($riddles as $index => $riddle) : ?>
@@ -41,8 +41,9 @@ try {
     <p id="feedback"></p>
   </section>
 
+  
+
   <script src="../js/app.js"></script>
 
 </body>
-
 </html>

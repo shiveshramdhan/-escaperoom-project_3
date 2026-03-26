@@ -208,13 +208,31 @@ transform:scale(1.05);
 box-shadow:0 0 10px white;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.room2 {
+  background-image: url("../img/backgroundroom_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
 .room3{
 background: radial-gradient(circle at center,#000000,#ba0000);
-
 }
 
-.background-image {
-
-}
 
 
