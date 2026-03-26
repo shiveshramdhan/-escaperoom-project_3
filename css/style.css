@@ -1,10 +1,19 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('../img/scream-4_7ae7aba6.avif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  background-color: #050405;
 }
 
 a {
-  color: black;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -67,6 +76,27 @@ button {
   margin-top: 10px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.timer {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  background-image: url('../img/scream-4_7ae7aba6.avif');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 1000;
 }
 
 
