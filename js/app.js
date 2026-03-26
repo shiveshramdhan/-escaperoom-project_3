@@ -1,77 +1,169 @@
-// Deze functie opent de modal en toont de vraag
+let solvedCount = 0;
+let totalBoxes = document.querySelectorAll('.box').length;
+let gamePhase = 'riddles'; // 'riddles' of 'final'
+
+const finalQuestion = 'Wat heeft één sleutel maar kan geen enkele deur openen?';
+const finalAnswer = 'Piano';
+
+let remainingSeconds = 5 * 60;
+let timerInterval = null;
+
+function startTimer() {
+  const timerEl = document.getElementById('timer');
+
+  function updateTimer() {
+    const minutes = Math.floor(remainingSeconds / 60);
+    const seconds = remainingSeconds % 60;
+    timerEl.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    if (remainingSeconds <= 0) {
+      clearInterval(timerInterval);
+      alert('Tijd is om!');
+      window.location.href = '/files/win-lose.php?result=lose&time=00:00';
+      return;
+    }
+
+    remainingSeconds -= 1;
+  }
+
+  updateTimer();
+  timerInterval = setInterval(updateTimer, 1000);
+}
+
 function openModal(index) {
-  // Zoek het element met de class 'box' en het bijbehorende data-index
-  let box = document.querySelector(`.box[data-index='${index}']`);
+  const box = document.querySelector(`.box[data-index='${index}']`);
+  if (!box || box.classList.contains('solved')) {
+    return;
+  }
 
-  // Haal de vraag en het juiste antwoord uit de dataset van de box
-  let riddleText = box.dataset.riddle;
-  let correctAnswer = box.dataset.answer;
+  const riddleText = box.dataset.riddle;
+  const correctAnswer = box.dataset.answer;
 
-  // Zet de vraagtekst in het modalvenster
+  const modal = document.getElementById('modal');
   document.getElementById('riddle').innerText = riddleText;
-
-  // Zet het correcte antwoord in de modal, zodat we het later kunnen vergelijken
-  let modal = document.getElementById('modal');
   modal.dataset.answer = correctAnswer;
-  modal.dataset.index = index; // remember which box was opened
+  modal.dataset.index = index;
+  modal.dataset.phase = 'riddles';
 
-  // Maak het antwoordveld leeg
   document.getElementById('answer').value = '';
+  document.getElementById('feedback').innerText = '';
 
-  // Toon de overlay en de modal door de display-stijl te veranderen naar 'block'
   document.getElementById('overlay').style.display = 'block';
   modal.style.display = 'block';
 }
 
-// Deze functie sluit de modal en de overlay
 function closeModal() {
-  // Zet de overlay en modal weer op 'none' zodat ze niet meer zichtbaar zijn
   document.getElementById('overlay').style.display = 'none';
   document.getElementById('modal').style.display = 'none';
-
-  // Maak de feedback tekst leeg
   document.getElementById('feedback').innerText = '';
 }
 
-// Initialize start time and solved count
-let startTime = Date.now();
-let solvedCount = 0;
-let totalBoxes = document.querySelectorAll('.box').length;
+function showFinalQuestion() {
+  gamePhase = 'final';
+  const modal = document.getElementById('modal');
+  modal.dataset.phase = 'final';
+  modal.dataset.answer = finalAnswer;
+  modal.dataset.index = '';
 
-// Deze functie controleert of het ingevoerde antwoord correct is
+  document.getElementById('riddle').innerText = `Laatste vraag: ${finalQuestion}`;
+  document.getElementById('answer').value = '';
+  document.getElementById('feedback').innerText = 'Beantwoord de laatste vraag om naar kamer 2 te gaan.';
+  document.getElementById('feedback').style.color = '#000';
+
+  document.getElementById('overlay').style.display = 'block';
+  modal.style.display = 'block';
+}
+
 function checkAnswer() {
-  let userAnswer = document.getElementById('answer').value.trim();
-  let correctAnswer = document.getElementById('modal').dataset.answer;
-  let feedback = document.getElementById('feedback');
+  const userAnswer = document.getElementById('answer').value.trim();
+  const modal = document.getElementById('modal');
+  const correctAnswer = modal.dataset.answer || '';
+  const feedback = document.getElementById('feedback');
+
+  if (!userAnswer) {
+    feedback.innerText = 'Vul eerst een antwoord in.';
+    feedback.style.color = 'red';
+    return;
+  }
 
   if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    if (modal.dataset.phase === 'final') {
+      window.location.href = '/rooms/room_2.php';
+      return;
+    }
+
     feedback.innerText = 'Correct! Goed gedaan!';
     feedback.style.color = 'green';
 
-    // mark the current box as solved so user can't reopen
-    let idx = document.getElementById('modal').dataset.index;
-    let box = document.querySelector(`.box[data-index='${idx}']`);
+    const idx = modal.dataset.index;
+    const box = document.querySelector(`.box[data-index='${idx}']`);
     if (box && !box.classList.contains('solved')) {
       box.classList.add('solved');
-      solvedCount++;
+      solvedCount += 1;
     }
 
-    // Sluit de modal na 1 seconde
     setTimeout(() => {
       closeModal();
 
-      // if all boxes have been solved, redirect to win page
       if (solvedCount === totalBoxes) {
-        let elapsed = Date.now() - startTime;
-        // format mm:ss
-        let minutes = Math.floor(elapsed / 60000);
-        let seconds = Math.floor((elapsed % 60000) / 1000);
-        let timeStr = `${minutes}:${seconds.toString().padStart(2,'0')}`;
-        window.location.href = `/files/win-lose.php?result=win&time=${encodeURIComponent(timeStr)}`;
+        showFinalQuestion();
       }
-    }, 1000);
+    }, 800);
   } else {
     feedback.innerText = 'Fout, probeer opnieuw!';
     feedback.style.color = 'red';
   }
+}
+
+localStorage.clear();
+window.addEventListener('load', () => {
+  startTimer();
+});
+console.log("JS werkt!"); // Even checken of script geladen is
+
+// Haal bestaande data op of maak lege array
+let teams = JSON.parse(localStorage.getItem("teams")) || [];
+
+// Toon tabel bij laden
+document.addEventListener("DOMContentLoaded", function() {
+    displayTeams();
+});
+
+function addTeam() {
+
+  console.log("addTeam"); // Even checken of script geladen is
+
+    let name = document.getElementById("name").value.trim();
+    let team = document.getElementById("team").value.trim();
+
+    if (name === "" || team === "") {
+        alert("Vul beide velden in!");
+        return;
+    }
+
+    // Voeg toe aan array
+    teams.push({ name: name, team: team });
+
+    // Opslaan in localStorage
+    localStorage.setItem("teams", JSON.stringify(teams));
+
+    // Leeg maken input
+    document.getElementById("name").value = "";
+    document.getElementById("team").value = "";
+
+    // Update tabel
+    displayTeams();
+}
+
+function displayTeams() {
+    let tableBody = document.getElementById("tableBody");
+    tableBody.innerHTML = "";
+
+    teams.forEach((item, index) => {
+        let row = `<tr>
+            <td>${item.name}</td>
+            <td>${item.team}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+    });
 }

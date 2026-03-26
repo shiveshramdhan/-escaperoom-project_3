@@ -1,10 +1,19 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('../img/scream-4_7ae7aba6.avif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  background-color: #050405;
 }
 
 a {
-  color: black;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -67,6 +76,27 @@ button {
   margin-top: 10px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.timer {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  background-image: url('../img/scream-4_7ae7aba6.avif');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 1000;
 }
 
 
@@ -208,50 +238,36 @@ transform:scale(1.05);
 box-shadow:0 0 10px white;
 }
 
-.room3{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.room2 {
+  background-image: url("../img/backgroundroom_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  position: relative;
 }
 
-.room3 .background-image {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  pointer-events: none;
+.room3{
+background: radial-gradient(circle at center,#000000,#ba0000);
+
 }
 
-.room3 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.background-image {
+
 }
 
-.room3 .box1 {
-  position: absolute;
-  right: -470px;
-  top:-200%;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
-.room3 .modal {
-  top: 75% !important;
-  transform: translate(100%, 50%);
-}
-
-.room3 .modal,
-.room3 .overlay {
-  position: relative;
-  z-index: 1;
-}
 
 
