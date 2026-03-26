@@ -20,6 +20,6 @@ VALUES
     ('Ik heb een gezicht en twee handen, maar geen armen of benen. Wat ben ik?', 'Horloge', 'Wijst de tijd aan.', 2),
     
     -- Kamer 3
-    ('Je kunt het vangen, maar niet gooien. Wat ben ik?', 'Kou', 'Je voelt dit in de winter.', 3),
+    ('Ik volg je overal waar het licht is… maar verdwijn zodra het donker wordt. Wat ben ik?', 'Een schaduw', 'Kijk naar de grond als het licht achter je staat…', 3),
     ('Wat wordt natter naarmate het droogt?', 'Handdoek', 'Je gebruikt dit na het douchen.', 3),
     ('Ik ben nooit nass, maar bij regen ben ik het eerste wat nat wordt. Wat ben ik?', 'Regenjas', 'Protection tegen water.', 3);
