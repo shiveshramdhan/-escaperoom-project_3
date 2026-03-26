@@ -115,6 +115,7 @@ function checkAnswer() {
   }
 }
 
+localStorage.clear();
 window.addEventListener('load', () => {
   startTimer();
 });
