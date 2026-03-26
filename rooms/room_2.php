@@ -21,12 +21,22 @@ try {
 
 <body class="room_2">
 
+  <?php
+  $positions = [
+    ['top' => '20%', 'left' => '15%'],
+    ['top' => '45%', 'left' => '40%'],
+    ['top' => '70%', 'left' => '65%']
+  ];
+  ?>
+
   <div class="container">
     <?php foreach ($riddles as $index => $riddle) : ?>
-    <div class="box box<?php echo $index + 1; ?>" onclick="openModal(<?php echo $index; ?>)"
+    <?php $pos = $positions[$index % count($positions)]; ?>
+    <div class="box box<?php echo $index + 1; ?>" style="top: <?php echo $pos['top']; ?>; left: <?php echo $pos['left']; ?>;"
+      onclick="openModal(<?php echo $index; ?>)"
       data-index="<?php echo $index; ?>" data-riddle="<?php echo htmlspecialchars($riddle['riddle']); ?>"
       data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>">
-      Box <?php echo $index + 1; ?>
+      Vraag <?php echo $index + 1; ?>
     </div>
     <?php endforeach; ?>
   </div>

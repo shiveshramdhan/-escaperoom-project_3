@@ -106,7 +106,7 @@ function checkAnswer() {
       closeModal();
 
       if (solvedCount === totalBoxes) {
-        showFinalQuestion();
+        window.location.href = '/rooms/room_3.php';
       }
     }, 800);
   } else {
