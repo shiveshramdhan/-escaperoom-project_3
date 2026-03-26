@@ -10,6 +10,10 @@ let timerInterval = null;
 
 function startTimer() {
   const timerEl = document.getElementById('timer');
+  if (!timerEl) {
+    // Geen timer-element aanwezig op deze pagina, sla timer over.
+    return;
+  }
 
   function updateTimer() {
     const minutes = Math.floor(remainingSeconds / 60);
@@ -106,7 +110,7 @@ function checkAnswer() {
       closeModal();
 
       if (solvedCount === totalBoxes) {
-        window.location.href = '/rooms/room_3.php';
+        window.location.href = '/-escaperoom-project_3/rooms/room_3.php';
       }
     }, 800);
   } else {
