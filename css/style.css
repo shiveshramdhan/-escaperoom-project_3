@@ -10,6 +10,11 @@ body {
   background-size: cover;
 }
 
+.room_2 {
+  /* optional room-2 overlay color etc. */
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -301,6 +306,15 @@ background: radial-gradient(circle at center,#000000,#ba0000);
 
 .background-image {
 
+}
+
+
+.room_1{
+  background-image: url('../img/room_1background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 
