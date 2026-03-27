@@ -2,7 +2,7 @@
 require_once('../dbcon.php');
 
 try {
-  $stmt = $db_connection->query("SELECT * FROM riddles WHERE roomId = 2");
+  $stmt = $db_connection->query("SELECT * FROM riddles WHERE roomId = 1");
   $riddles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
   die("Databasefout: " . $e->getMessage());
@@ -15,11 +15,11 @@ try {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escape Room 2</title>
+  <title>Escape Room 1</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="room_2" data-next-room="room_3.php">
+<body class="room_1" data-next-room="room_2.php">
 
   <?php
   $positions = [
@@ -56,4 +56,5 @@ try {
   <script src="../js/app.js"></script>
 
 </body>
-</html>
+</html></content>
+<parameter name="filePath">c:\wamp64\www\-escaperoom-project_3\rooms\room_1.php

@@ -3,6 +3,13 @@ body {
   text-align: center;
 }
 
+.room_2 {
+  /* background-image: url('../img/backgroundroom_2.jpg') no-repeat center center fixed; */ 
+  background-color: #f50c0c;
+  background-image: url(../img/backgroundroom_2.jpg);
+  background-size: cover;
+}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -23,20 +30,19 @@ a {
   position: absolute;
   width: 70px;
   height: 70px;
-  background-color: rgba(126, 0, 0, 0); /* onzichtbaar */
-  color: transparent;
+  background-color: rgba(126, 0, 0, 0.5); /* zichtbaar */
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-weight: bold;
   border-radius: 50%;
-  border: 2px dashed rgba(255, 255, 255, 0.0); /* onzichtbaar
-  maar klikbaar */
+  border: 2px solid rgba(255, 255, 255, 0.7);
   transform: translate(-50%, -50%);
   transition: transform 0.2s ease, border-color 0.2s ease;
   z-index: 10;
-  opacity: 0.0;
+  opacity: 1.0;
   pointer-events: auto;
 }
 
@@ -281,7 +287,7 @@ box-shadow:0 0 10px white;
 
 
 .room_2 {
-  background-image: url('/img/backgroundroom_2.jpg');
+  /* background-image: url('/img/backgroundroom_2.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

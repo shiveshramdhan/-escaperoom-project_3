@@ -110,7 +110,8 @@ function checkAnswer() {
       closeModal();
 
       if (solvedCount === totalBoxes) {
-        window.location.href = '/-escaperoom-project_3/rooms/room_3.php';
+        const nextRoom = document.body.dataset.nextRoom || 'win-lose.php?result=win';
+        window.location.href = `/-escaperoom-project_3/rooms/${nextRoom}`;
       }
     }, 800);
   } else {
@@ -118,6 +119,7 @@ function checkAnswer() {
     feedback.style.color = 'red';
   }
 }
+
 
 localStorage.clear();
 window.addEventListener('load', () => {
