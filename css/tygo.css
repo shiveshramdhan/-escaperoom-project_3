@@ -1,0 +1,277 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.room_2 .container {
+  position: relative;
+}
+
+.room3 {
+  background: url('../rooms/Room3background.jpg') center / cover no-repeat fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.room_2 .box {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(126, 0, 0, 0); /* onzichtbaar */
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.0); /* onzichtbaar
+  maar klikbaar */
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  z-index: 10;
+  opacity: 0.0;
+  pointer-events: auto;
+}
+
+.room_2 .box:hover {
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: rgba(126, 0, 0, 0.4);
+  color: white;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #7e0000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.box:hover {
+  background-color: #000000;
+}
+
+.room_2 .box.solved {
+  display: none;
+}
+
+.box.solved {
+  background-color: #390072;
+  cursor: default;
+}
+
+.box.solved:hover {
+  background-color: #000000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.253);
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(116, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+  width: 300px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.timer {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  background-image: url('../img/scream-4_7ae7aba6.avif');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 1000;
+}
+
+
+/* win/lose screen styles */
+.win-lose-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f5f5f5;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 300px;
+}
+
+.win-lose-container .numbers {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.win-lose-container .numbers span {
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.win-lose-container .result {
+  font-size: 2.5rem;
+  margin: 20px 0 10px;
+}
+
+.win-lose-container .result.win {
+  color: green;
+}
+
+.win-lose-container .result.lose {
+  color: red;
+}
+
+.win-lose-container .time {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* teamsphp css */
+
+.TEAMS {
+  background-color: #35023f;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+/* achtergrond */
+
+body{
+margin:0;
+font-family: Arial, sans-serif;
+}
+
+/* paarse horror achtergrond */
+
+.INDEX1{
+background: radial-gradient(circle at top,#4b006e,#1a001f);
+color:white;
+min-height:100vh;
+}
+
+/* layout */
+
+.home-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+padding:80px 40px;
+gap:50px;
+}
+
+/* tekst */
+
+.text-section{
+width:50%;
+}
+
+.text-section h1{
+font-family:'Creepster', cursive;
+font-size:48px;
+letter-spacing:2px;
+margin-bottom:30px;
+text-shadow:0 0 15px black;
+}
+
+.text-section p{
+line-height:1.7;
+margin-bottom:15px;
+}
+
+/* evil text */
+
+.evil-text{
+color:#ff4d4d;
+font-weight:bold;
+text-shadow:0 0 10px red;
+}
+
+/* afbeelding */
+
+.image-section{
+width:45%;
+}
+
+.image-section img{
+width:100%;
+border-radius:6px;
+box-shadow:0 0 40px black;
+}
+
+/* knop */
+
+.start-btn{
+margin-top:30px;
+padding:16px 50px;
+font-size:18px;
+background:#444;
+color:white;
+border:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.start-btn:hover{
+background:#666;
+transform:scale(1.05);
+box-shadow:0 0 10px white;
+}
+
+
+

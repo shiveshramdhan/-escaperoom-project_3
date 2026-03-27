@@ -16,11 +16,10 @@ try {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room 3</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/tygo.css">
 </head>
 
 <body class="room3">
-  <img src="Room3background.avif" alt="Room3background" class="background-image">
 
   <div class="container">
     <?php foreach ($riddles as $index => $riddle) : ?>
@@ -42,7 +41,7 @@ try {
     <p id="feedback"></p>
   </section>
 
-  <script src="../js/app.js"></script>
+  <script src="../js/tygo.js"></script>
  
 </body>
 
