@@ -281,7 +281,7 @@ box-shadow:0 0 10px white;
 
 
 .room_2 {
-  background-image: url("../img//backgroundroom_2.jpg");
+  background-image: url('/img/backgroundroom_2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
