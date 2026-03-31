@@ -20,7 +20,7 @@ a {
 }
 
 .room3 {
-  background: url('../rooms/Room3background.jpg') center / cover no-repeat fixed;
+  background: url('../img/Room-3.jpg') center / cover no-repeat fixed !important;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -56,8 +56,8 @@ a {
 }
 
 .box {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   background-color: #7e0000;
   color: white;
   display: flex;
@@ -65,11 +65,20 @@ a {
   justify-content: center;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 50%;
 }
 
-.box:hover {
-  background-color: #000000;
+.room3 .box {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.room3 .box:hover {
+  opacity: 1;
+  background-color: #7e0000;
+  border-radius: 50%;
 }
 
 .room_2 .box.solved {
@@ -79,10 +88,12 @@ a {
 .box.solved {
   background-color: #390072;
   cursor: default;
+  opacity: 0.1;
 }
 
-.box.solved:hover {
-  background-color: #000000;
+.room3 .box.solved:hover {
+  opacity: 1;
+  background-color: #390072;
 }
 
 .overlay {
@@ -113,6 +124,122 @@ button {
   cursor: pointer;
 }
 
+.hint-reveal-btn {
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.hint-reveal-btn:hover {
+  background-color: #ffb300;
+}
+
+.hint-text {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-left: 3px solid #ffc107;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-style: italic;
+  color: #ffd700;
+}
+
+.hint-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 15;
+  padding: 10px 15px;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.hint-btn:hover {
+  background-color: #ffb300;
+}
+
+.hint-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 25;
+}
+
+.hint-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  display: none;
+  width: 500px;
+  max-width: 90%;
+  z-index: 26;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.hint-modal h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.hint-map {
+  width: 100%;
+  height: 400px;
+  background: #111;
+  border: 2px solid #ffc107;
+  border-radius: 10px;
+  position: relative;
+  margin: 20px 0;
+}
+
+.hint-box {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #7e0000;
+  border: 2px solid #ffc107;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.close-hint-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close-hint-btn:hover {
+  background-color: #ffb300;
+}
+
 .timer {
   position: fixed;
   top: 10px;
@@ -125,10 +252,8 @@ button {
   font-weight: bold;
   color: #fff;
   text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  background-image: url('../img/scream-4_7ae7aba6.avif');
-  background-size: cover;
-  background-position: center;
-  border: 2px solid #fff;
+  background: #000;
+  border: none;
   border-radius: 12px;
   text-align: center;
   z-index: 1000;
@@ -272,6 +397,8 @@ background:#666;
 transform:scale(1.05);
 box-shadow:0 0 10px white;
 }
+
+
 
 
 

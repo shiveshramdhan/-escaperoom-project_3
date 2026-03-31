@@ -20,6 +20,6 @@ VALUES
     ('Ik heb een gezicht en twee handen, maar geen armen of benen. Wat ben ik?', 'Horloge', 'Wijst de tijd aan.', 2),
     
     -- Kamer 3
-    ('Ik volg je overal waar het licht is… maar verdwijn zodra het donker wordt. Wat ben ik?', 'Een schaduw', 'Kijk naar de grond als het licht achter je staat…', 3),
-    ('Wat wordt natter naarmate het droogt?', 'Handdoek', 'Je gebruikt dit na het douchen.', 3),
-    ('Ik ben nooit nass, maar bij regen ben ik het eerste wat nat wordt. Wat ben ik?', 'Regenjas', 'Protection tegen water.', 3);
+    ('HOE MEER JE ME VOEDT, HOE GROTER IK WORD. WATER DOODT ME. Wat ben ik?', 'Vuur', 'Element', 3),
+    ('ƎԀ∀ƆƧƎ', 'ESCAPE', 'Draai het om...', 3),
+    ('3 – 6 – 12 – 24 – ?', '48', 'Denk na.', 3);

@@ -20,12 +20,15 @@ try {
 </head>
 
 <body class="room3">
+   
+  <div id="timer" class="timer"></div>
+  <button id="hintBtn" class="hint-btn" onclick="openHintModal()">💡 Hint</button>
 
-  <div class="container">
+<div class="container">
     <?php foreach ($riddles as $index => $riddle) : ?>
     <div class="box box<?php echo $index + 1; ?>" onclick="openModal(<?php echo $index; ?>)"
       data-index="<?php echo $index; ?>" data-riddle="<?php echo htmlspecialchars($riddle['riddle']); ?>"
-      data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>">
+      data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>" data-hint="<?php echo htmlspecialchars($riddle['hint']); ?>">
       Box <?php echo $index + 1; ?>
     </div>
     <?php endforeach; ?>
@@ -38,7 +41,17 @@ try {
     <p id="riddle"></p>
     <input type="text" id="answer" placeholder="Typ je antwoord">
     <button onclick="checkAnswer()">Verzenden</button>
+    <button onclick="toggleHint()" class="hint-reveal-btn">💡 Hint tonen</button>
+    <p id="hintText" class="hint-text" style="display: none;"></p>
     <p id="feedback"></p>
+  </section>
+
+  <section class="hint-overlay" id="hintOverlay" onclick="closeHintModal()"></section>
+
+  <section class="hint-modal" id="hintModal">
+    <h2>Waar zijn de boxen?</h2>
+    <div id="hintMap" class="hint-map"></div>
+    <button onclick="closeHintModal()" class="close-hint-btn">Sluiten</button>
   </section>
 
   <script src="../js/tygo.js"></script>
