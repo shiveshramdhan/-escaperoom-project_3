@@ -39,7 +39,7 @@ deze escape room is voor 16 jaar en ouder. <br>
 <p class="evil-text">HAHAHAHAHAHAHAHAHAHAHAHA!!!!!!!!!!!!</p> <br>
 
 <a href="teams.php">
-<button class="start-btn">teams aanmaken</button> <br>
+<button class="start-btn">Start spel</button> <br>
 </a>
 
 </div>
