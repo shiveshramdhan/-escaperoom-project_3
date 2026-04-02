@@ -35,11 +35,14 @@ try {
     <div class="box box<?php echo $index + 1; ?>" style="top: <?php echo $pos['top']; ?>; left: <?php echo $pos['left']; ?>;"
       onclick="openModal(<?php echo $index; ?>)"
       data-index="<?php echo $index; ?>" data-riddle="<?php echo htmlspecialchars($riddle['riddle']); ?>"
-      data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>">
+      data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>"
+      data-hint="<?php echo htmlspecialchars($riddle['hint']); ?>">
       Vraag <?php echo $index + 1; ?>
     </div>
     <?php endforeach; ?>
   </div>
+
+  <div class="timer" id="timer">05:00</div>
 
   <section class="overlay" id="overlay" onclick="closeModal()"></section>
 
@@ -48,7 +51,9 @@ try {
     <p id="riddle"></p>
     <input type="text" id="answer" placeholder="Typ je antwoord">
     <button onclick="checkAnswer()">Verzenden</button>
+    <button class="hint-btn" onclick="showHint()">💡 Hint aanvragen</button>
     <p id="feedback"></p>
+    <p id="hintContent" style="display: none; color: #ffd700; margin-top: 10px; font-style: italic;"></p>
   </section>
 
   

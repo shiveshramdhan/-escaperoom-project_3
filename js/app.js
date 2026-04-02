@@ -23,7 +23,7 @@ function startTimer() {
     if (remainingSeconds <= 0) {
       clearInterval(timerInterval);
       alert('Tijd is om!');
-      window.location.href = '/files/win-lose.php?result=lose&time=00:00';
+      window.location.href = '../files/win-lose.php?result=lose&time=00:00';
       return;
     }
 
@@ -42,15 +42,19 @@ function openModal(index) {
 
   const riddleText = box.dataset.riddle;
   const correctAnswer = box.dataset.answer;
+  const hint = box.dataset.hint;
 
   const modal = document.getElementById('modal');
   document.getElementById('riddle').innerText = riddleText;
   modal.dataset.answer = correctAnswer;
   modal.dataset.index = index;
   modal.dataset.phase = 'riddles';
+  modal.dataset.hint = hint;
 
   document.getElementById('answer').value = '';
   document.getElementById('feedback').innerText = '';
+  document.getElementById('hintContent').style.display = 'none';
+  document.getElementById('hintContent').innerText = '';
 
   document.getElementById('overlay').style.display = 'block';
   modal.style.display = 'block';
@@ -60,6 +64,15 @@ function closeModal() {
   document.getElementById('overlay').style.display = 'none';
   document.getElementById('modal').style.display = 'none';
   document.getElementById('feedback').innerText = '';
+  document.getElementById('hintContent').style.display = 'none';
+}
+
+function showHint() {
+  const modal = document.getElementById('modal');
+  const hint = modal.dataset.hint || 'Geen hint beschikbaar';
+  const hintElement = document.getElementById('hintContent');
+  hintElement.innerText = `💡 Hint: ${hint}`;
+  hintElement.style.display = 'block';
 }
 
 function showFinalQuestion() {
@@ -110,8 +123,12 @@ function checkAnswer() {
       closeModal();
 
       if (solvedCount === totalBoxes) {
-        const nextRoom = document.body.dataset.nextRoom || 'win-lose.php?result=win';
-        window.location.href = `/-escaperoom-project_3/rooms/${nextRoom}`;
+        const nextRoom = document.body.dataset.nextRoom;
+        if (nextRoom && !nextRoom.includes('win-lose')) {
+          window.location.href = nextRoom;
+        } else {
+          window.location.href = '../files/win-lose.php?result=win';
+        }
       }
     }, 800);
   } else {
@@ -119,7 +136,6 @@ function checkAnswer() {
     feedback.style.color = 'red';
   }
 }
-
 
 localStorage.clear();
 window.addEventListener('load', () => {

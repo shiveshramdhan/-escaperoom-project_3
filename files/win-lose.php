@@ -38,7 +38,7 @@ class WinLosePage {
 
     <script>
         document.getElementById('play-again').addEventListener('click', function() {
-            window.location.href = '/files/index.html';
+            window.location.href = './index.php';
         });
     </script>
 </body>

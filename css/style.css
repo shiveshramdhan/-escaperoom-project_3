@@ -45,9 +45,9 @@ a {
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.7);
   transform: translate(-50%, -50%);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
   z-index: 10;
-  opacity: 1.0;
+  opacity: 0;
   pointer-events: auto;
 }
 
@@ -113,8 +113,27 @@ a {
 
 button {
   margin-top: 10px;
-  padding: 5px 10px;
+  padding: 8px 15px;
   cursor: pointer;
+  background-color: #7e0000;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #5a0000;
+}
+
+.hint-btn {
+  background-color: #cc6600;
+  margin-left: 5px;
+}
+
+.hint-btn:hover {
+  background-color: #994d00;
 }
 
 .timer {
@@ -299,7 +318,14 @@ box-shadow:0 0 10px white;
   min-height: 100vh;
 }
 
+.room3{
+background: radial-gradient(circle at center,#000000,#ba0000);
 
+}
+
+.background-image {
+
+}
 
 
 .room_1{
