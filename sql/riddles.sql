@@ -10,9 +10,10 @@ CREATE TABLE riddles (
 INSERT INTO riddles (riddle, answer, hint, roomId)
 VALUES
     -- Kamer 1
-    ('Ik heb handen maar kan niet kloppen. Wat ben ik?', 'Klok', 'Kijk naar je pols of aan de muur.', 1),
-    ('Hoe meer je neemt, hoe meer je achterlaat. Wat ben ik?', 'Voetafdrukken', 'Je maakt dit in het zand of op de vloer.', 1),
-    ('Wat heeft een hoofd en een staart, maar geen lichaam?', 'Munt', 'Je gooit dit voor kop of munt.', 1),
+    -- Horrorvragen kamer 1
+    ('Je hoort gefluister in het donker, maar ziet niemand. Wat is het?', 'de wind', 'Het is overal, maar je ziet het niet.', 1),
+    ('In een verlaten huis tikt iets zonder klok. Wat is het?', 'het hart', 'Het klopt, maar je ziet het niet.', 1),
+    ('Welke schaduw volgt je alleen als het licht uitgaat?', 'angst', 'Het zit in je hoofd.', 1),
     
     -- Kamer 2
     ('Ik ben licht als een veer, maar de sterkste man ter wereld kan me niet vasthouden. Wat ben ik?', 'Adem', 'Je hebt dit nodig om te leven.', 2),

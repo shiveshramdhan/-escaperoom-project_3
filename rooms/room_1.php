@@ -16,16 +16,17 @@ try {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Escape Room 1</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/kadir.css">
 </head>
 
 <body class="room_1" data-next-room="room_2.php">
 
   <?php
+  // Logische horror-achtige plekken in de kamer
   $positions = [
-    ['top' => '20%', 'left' => '15%'],
-    ['top' => '45%', 'left' => '40%'],
-    ['top' => '70%', 'left' => '65%']
+    ['top' => '30%', 'left' => '20%'], // bij het raam
+    ['top' => '60%', 'left' => '55%'], // bij de oude kast
+    ['top' => '75%', 'left' => '35%']  // bij de donkere hoek
   ];
   ?>
 
@@ -53,8 +54,7 @@ try {
 
   
 
-  <script src="../js/app.js"></script>
+  <script src="../js/kadir.js"></script>
 
 </body>
-</html></content>
-<parameter name="filePath">c:\wamp64\www\-escaperoom-project_3\rooms\room_1.php
+</html>
