@@ -14,6 +14,102 @@ body.room_1 {
 	height: 100vh;
 }
 
+.timer {
+	position: fixed;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 220px;
+	height: 45px;
+	line-height: 45px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 0 0 8px rgba(0,0,0,0.7);
+	background-image: url('../img/scream-4_7ae7aba6.avif');
+	background-size: cover;
+	background-position: center;
+	border: 2px solid #fff;
+	border-radius: 12px;
+	text-align: center;
+	z-index: 1000;
+}
+
+.popup {
+	position: fixed;
+	top: 18%;
+	left: 50%;
+	transform: translateX(-50%) scale(0.96);
+	width: min(340px, calc(100vw - 32px));
+	background: rgba(10, 10, 10, 0.94);
+	border: 2px solid #8b0000;
+	border-radius: 18px;
+	padding: 1.2em 1.4em;
+	color: #fff;
+	text-align: center;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+	z-index: 1003;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.popup.active {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateX(-50%) scale(1);
+}
+
+.popup-content p {
+	margin: 0 0 1em;
+	font-size: 1.1rem;
+}
+
+.popup-content button {
+	background: #8b0000;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 0.7em 1.2em;
+	font-size: 1rem;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+}
+
+.popup-content button:hover {
+	background: #b30000;
+}
+
+.scare-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.95);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2000;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.1s ease;
+}
+
+.scare-overlay.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.scare-overlay img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
 
 .box {
 	position: absolute;
@@ -27,25 +123,22 @@ body.room_1 {
 	align-items: center;
 	justify-content: center;
 	font-size: 1.2em;
-	box-shadow: 0 0 20px 5px #00000099;
+	box-shadow: none;
 	cursor: pointer;
 	transition: transform 0.2s, box-shadow 0.2s, opacity 0.4s;
 	z-index: 2;
 	opacity: 0;
-	pointer-events: none;
+	visibility: visible;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+	pointer-events: auto;
 }
 
 .box.visible {
 	opacity: 1;
+	visibility: visible;
 	pointer-events: auto;
-}
-
-.box:hover {
-	opacity: 1;
-	pointer-events: auto;
-	transform: scale(1.08) rotate(-2deg);
-	box-shadow: 0 0 40px 10px #8b0000cc;
-	background: rgba(60, 0, 0, 0.95);
 }
 
 .modal {

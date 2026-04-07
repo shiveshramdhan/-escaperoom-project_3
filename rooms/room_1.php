@@ -30,6 +30,40 @@ try {
   ];
   ?>
 
+  <div class="timer" id="timer">05:00</div>
+
+  <div class="popup" id="hintPopup">
+    <div class="popup-content">
+      <p>Je ziet iets in de kast</p>
+      <button type="button" onclick="closeHintPopup()">Sluiten</button>
+    </div>
+  </div>
+
+  <div class="popup" id="secondHintPopup">
+    <div class="popup-content">
+      <p>Er schijnt iets naar je oog aan de rechterkant van de kamer</p>
+      <button type="button" onclick="closeSecondHintPopup()">Sluiten</button>
+    </div>
+  </div>
+
+  <div class="popup" id="thirdHintPopup">
+    <div class="popup-content">
+      <p>Je voelt iets sterk van de tafel</p>
+      <button type="button" onclick="closeThirdHintPopup()">Sluiten</button>
+    </div>
+  </div>
+
+  <div class="popup" id="doorPopup">
+    <div class="popup-content">
+      <p>Een deur gaat open</p>
+      <button type="button" onclick="window.location.href='room_2.php'">Ga naar kamer 2</button>
+    </div>
+  </div>
+
+  <div class="scare-overlay" id="scareOverlay">
+    <img src="../img/lg_ebb42c5c23d5-jump-scare-feat.jpg" alt="Jump scare">
+  </div>
+
   <div class="container">
     <?php foreach ($riddles as $index => $riddle) : ?>
     <?php $pos = $positions[$index % count($positions)]; ?>
