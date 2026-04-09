@@ -61,7 +61,6 @@ function startTimer() {
 
 		if (remainingSeconds <= 0) {
 			clearInterval(timerInterval);
-			alert('Tijd is om!');
 			window.location.href = '../files/win-lose.php?result=lose&time=00:00';
 			return;
 		}
@@ -111,6 +110,7 @@ function openModal(index) {
 	document.getElementById('overlay').classList.add('active');
 	document.getElementById('answer').value = '';
 	document.getElementById('feedback').innerHTML = '';
+	document.getElementById('hint').style.display = 'none';
 }
 
 function showScareOverlay(callback) {
@@ -167,4 +167,12 @@ function checkAnswer() {
 		feedback.innerHTML = 'Fout! Probeer opnieuw.';
 		feedback.style.color = '#ff6666';
 	}
+}
+
+function showHint() {
+	const boxes = document.querySelectorAll('.box');
+	const box = boxes[currentIndex];
+	const hint = box.getAttribute('data-hint');
+	document.getElementById('hint').innerHTML = hint;
+	document.getElementById('hint').style.display = 'block';
 }
