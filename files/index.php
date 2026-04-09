@@ -41,6 +41,9 @@ deze escape room is voor 16 jaar en ouder. <br>
 <a href="teams.php">
 <button class="start-btn">Start spel</button> <br>
 </a>
+<a href="reviewpagina.php">
+<button class="start-btn" style="margin-top: 15px;">Review achterlaten</button>
+</a>
 
 </div>
 

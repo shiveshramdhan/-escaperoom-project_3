@@ -34,11 +34,15 @@ class WinLosePage {
             <div class="time">Tijd: <?php echo htmlspecialchars($this->time); ?></div>
         <?php endif; ?>
         <button id="play-again">Play again</button>
+        <button id="leave-review">Review achterlaten</button>
     </div>
 
     <script>
         document.getElementById('play-again').addEventListener('click', function() {
             window.location.href = './index.php';
+        });
+        document.getElementById('leave-review').addEventListener('click', function() {
+            window.location.href = '../admin/add_review.php';
         });
     </script>
 </body>
