@@ -242,7 +242,7 @@ button {
 
 .timer {
   position: fixed;
-  top: 10px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
   width: 220px;

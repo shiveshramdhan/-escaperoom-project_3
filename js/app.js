@@ -137,18 +137,19 @@ function checkAnswer() {
   }
 }
 
-localStorage.clear();
 window.addEventListener('load', () => {
   startTimer();
 });
 console.log("JS werkt!"); // Even checken of script geladen is
 
 // Haal bestaande data op of maak lege array
-let teams = JSON.parse(localStorage.getItem("teams")) || [];
+let teams = JSON.parse(localStorage.getItem("teamEntries")) || [];
 
 // Toon tabel bij laden
 document.addEventListener("DOMContentLoaded", function() {
-    displayTeams();
+    if (document.getElementById("tableBody")) {
+        displayTeams();
+    }
 });
 
 function addTeam() {
@@ -167,7 +168,7 @@ function addTeam() {
     teams.push({ name: name, team: team });
 
     // Opslaan in localStorage
-    localStorage.setItem("teams", JSON.stringify(teams));
+    localStorage.setItem("teamEntries", JSON.stringify(teams));
 
     // Leeg maken input
     document.getElementById("name").value = "";
