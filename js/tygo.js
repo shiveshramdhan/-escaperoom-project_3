@@ -27,7 +27,7 @@ function startTimer() {
     if (remainingSeconds <= 0) {
       clearInterval(timerInterval);
       alert('Tijd is om!');
-      window.location.href = '/files/win-lose.php?result=lose&time=00:00';
+      window.location.href = '../files/win-lose.php?result=lose&time=00:00';
       return;
     }
 
@@ -134,7 +134,7 @@ function checkAnswer() {
 
       if (solvedCount === totalBoxes) {
         const elapsedTime = getElapsedTime();
-        window.location.href = `/files/win-lose.php?result=win&time=${elapsedTime}`;
+        window.location.href = `../files/win-lose.php?result=win&time=${elapsedTime}`;
       }
     }, 800);
   } else {
