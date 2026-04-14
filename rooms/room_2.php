@@ -55,6 +55,27 @@ try {
     .team-header a:hover {
       text-decoration: none;
     }
+    .timer {
+      background-color: black !important;
+      background-image: none !important;
+      color: white;
+    }
+    #showBubblesHint {
+      position: fixed;
+      top: 120px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: #cc6600;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      z-index: 1000;
+    }
+    #showBubblesHint:hover {
+      background-color: #994d00;
+    }
   </style>
 </head>
 
@@ -92,6 +113,8 @@ try {
 
   <div class="timer" id="timer">05:00</div>
 
+  <button id="showBubblesHint">💡 Hint: Toon bolletjes</button>
+
   <section class="overlay" id="overlay" onclick="closeModal()"></section>
 
   <section class="modal" id="modal">
@@ -108,6 +131,21 @@ try {
 
   <script src="../js/team-info.js"></script>
   <script src="../js/app.js"></script>
+  <script>
+    document.getElementById('showBubblesHint').addEventListener('click', function() {
+      const boxes = document.querySelectorAll('.box');
+      boxes.forEach(box => {
+        box.style.opacity = '1';
+        box.style.borderColor = 'yellow';
+      });
+      setTimeout(() => {
+        boxes.forEach(box => {
+          box.style.opacity = '';
+          box.style.borderColor = '';
+        });
+      }, 3000); // Show for 3 seconds
+    });
+  </script>
 
 </body>
 </html>
