@@ -35,25 +35,12 @@ class WinLosePage {
         <?php if ($this->time): ?>
             <div class="time">Tijd: <?php echo htmlspecialchars($this->time); ?></div>
         <?php endif; ?>
-<<<<<<< Updated upstream
-        <button id="play-again">Play again</button>
-        <button id="leave-review">Review achterlaten</button>
-=======
         <div class="button-row">
             <button type="button" class="btn secondary" onclick="window.location.href='index.php'">Terug naar start</button>
-            <button type="button" class="btn primary" onclick="window.location.href='index.php'">Opnieuw proberen</button>
+            <button type="button" class="btn primary" onclick="window.location.href='overzichtspagina_eenvoudig.php'">Bekijk overzicht</button>
         </div>
->>>>>>> Stashed changes
     </div>
 
-    <script>
-        document.getElementById('play-again').addEventListener('click', function() {
-            window.location.href = './index.php';
-        });
-        document.getElementById('leave-review').addEventListener('click', function() {
-            window.location.href = '../admin/add_review.php';
-        });
-    </script>
 </body>
 </html><?php
     }

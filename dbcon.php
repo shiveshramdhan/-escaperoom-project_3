@@ -15,6 +15,15 @@ try {
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )"
   );
+  $db_connection->exec(
+    "CREATE TABLE IF NOT EXISTS user_answers (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      team_name VARCHAR(100) NOT NULL,
+      riddle_id INT NOT NULL,
+      user_answer VARCHAR(255) NOT NULL,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )"
+  );
 } catch (PDOException $e) {
   echo "Verbinding mislukt" . $e->getMessage();
 }

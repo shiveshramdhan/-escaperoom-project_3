@@ -1,6 +1,7 @@
 let solvedCount = 0;
 let totalBoxes = document.querySelectorAll('.box').length;
 let gamePhase = 'riddles'; // 'riddles' of 'final'
+let userAnswers = JSON.parse(localStorage.getItem('userAnswers') || '{}');
 
 const finalQuestion = 'Wat heeft één sleutel maar kan geen enkele deur openen?';
 const finalAnswer = 'Piano';
@@ -43,6 +44,13 @@ function openModal(index) {
   const riddleText = box.dataset.riddle;
   const correctAnswer = box.dataset.answer;
   const hint = box.dataset.hint;
+  const riddleId = box.dataset.id;
+
+  console.log('openModal - Box data:', {
+    index: index,
+    riddle_id: riddleId,
+    riddle: riddleText.substring(0, 30) + '...'
+  });
 
   const modal = document.getElementById('modal');
   document.getElementById('riddle').innerText = riddleText;
@@ -50,6 +58,12 @@ function openModal(index) {
   modal.dataset.index = index;
   modal.dataset.phase = 'riddles';
   modal.dataset.hint = hint;
+  modal.dataset.id = riddleId;
+
+  console.log('Modal dataset na set:', {
+    modal_id: modal.dataset.id,
+    answer: modal.dataset.answer
+  });
 
   document.getElementById('answer').value = '';
   document.getElementById('feedback').innerText = '';
@@ -103,12 +117,19 @@ function checkAnswer() {
     return;
   }
 
-  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-    if (modal.dataset.phase === 'final') {
-      window.location.href = '/rooms/room_2.php';
-      return;
-    }
+  // Get team name from team-header
+  const teamHeader = document.querySelector('.team-header strong');
+  const teamName = teamHeader ? teamHeader.textContent : 'Onbekend team';
 
+  // Save answer locally (will be saved to database when viewing overview)
+  const riddleId = modal.dataset.id;
+  userAnswers[riddleId] = userAnswer;
+  localStorage.setItem('userAnswers', JSON.stringify(userAnswers));
+
+  console.log('Antwoord opgeslagen in localStorage:', riddleId, userAnswer);
+
+  // Continue with normal game logic
+  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
     feedback.innerText = 'Correct! Goed gedaan!';
     feedback.style.color = 'green';
 

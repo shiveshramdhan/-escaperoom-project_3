@@ -118,7 +118,7 @@ try {
     <div class="box box<?php echo $index + 1; ?>" style="top: <?php echo $pos['top']; ?>; left: <?php echo $pos['left']; ?>;"
       onclick="openModal(<?php echo $index; ?>)"
       data-index="<?php echo $index; ?>" data-riddle="<?php echo htmlspecialchars($riddle['riddle']); ?>"
-      data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>" data-hint="<?php echo htmlspecialchars($riddle['hint']); ?>">
+      data-answer="<?php echo htmlspecialchars($riddle['answer']); ?>" data-hint="<?php echo htmlspecialchars($riddle['hint']); ?>" data-id="<?php echo $riddle['id']; ?>">
       Vraag <?php echo $index + 1; ?>
     </div>
     <?php endforeach; ?>
