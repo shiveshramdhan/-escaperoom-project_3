@@ -8,6 +8,15 @@ try {
   $db_connection = new PDO("mysql:host=$server; dbname=$db", $username, $password);
   $db_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $db_connection->exec(
+    "CREATE TABLE IF NOT EXISTS riddles (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      riddle VARCHAR(255) NOT NULL,
+      answer VARCHAR(100) NOT NULL,
+      hint VARCHAR(255),
+      roomId INT NOT NULL
+    )"
+  );
+  $db_connection->exec(
     "CREATE TABLE IF NOT EXISTS team_members (
       id INT AUTO_INCREMENT PRIMARY KEY,
       team_name VARCHAR(100) NOT NULL,

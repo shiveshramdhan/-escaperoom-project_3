@@ -203,6 +203,7 @@ try {
 
         <div class="button-row">
             <button onclick="window.location.href='index.php'">← Terug naar start</button>
+            <button onclick="window.location.href='../admin/add_riddle.php'">Raadsel toevoegen</button>
             <button onclick="window.location.href='../admin/add_review.php'">Review achterlaten →</button>
         </div>
     </div>
